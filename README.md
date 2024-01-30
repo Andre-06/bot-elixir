@@ -1,3 +1,13 @@
-# Bot-Elixir-Discord 
-* Discord bot for RPG with token management, dice rolling etc. I did it in order to study and practice Python and SQL
-* Bot de Discord para RPG com gerenciamento de ficas, rolagem de dados, etc. Fiz o bot com o intuito de praticar e estudar Python e SQL
+Bot Elixir
+==========================
+Descrição
+--------------------------
+### Um Bot de Discord para RPG Sistema Próprio, uma ferramente para facilitar as rolagens e dinâmica das mesas
+
+## 📲 Funcionalidades | .help
+- Gerenciamento de fichas
+- Rolagem de dados
+- Controle de Iniciativa
+- Administração de VoiceChat
+- Integração com gsheet para fichas
+- Automatização de ataques, bloqueios e esquivas

@@ -1,5 +1,4 @@
 import gspread
-import pandas as pd
 import data_base
 from time import sleep
 from datetime import datetime

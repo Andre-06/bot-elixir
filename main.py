@@ -1,5 +1,4 @@
-import discord
-from discord.ext import commands
-
-intents = discord.Intents.all()
-client = commands.Bot(command_prefix=".", case_insensitive=True, intents=intents, help_command=None)
+import start
+import bot_commands
+import events
+import run

@@ -1,6 +1,6 @@
 # -------------BIBLIOTECAS---------#
 from functions import *
-from main import client
+from start import client
 
 
 @client.command(aliases=['r'])

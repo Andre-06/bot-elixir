@@ -1,6 +1,6 @@
 from discord.utils import get
 
-from main import client
+from start import client
 
 from functions import *
 import discord

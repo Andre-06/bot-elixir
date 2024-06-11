@@ -3,7 +3,6 @@ from discord.utils import get
 from main import client
 
 from functions import *
-from interactions import Button, ButtonStyle
 import discord
 
 
@@ -72,57 +71,6 @@ async def on_ready():
     print(f"Bot ON\nUser: {client.user} | Name: {client.user.name} | ID: {client.user.id}")
 
     await client.change_presence(activity=discord.Game(name=f".help | Melhor Bot de RPG confia"))
-
-
-@client.event
-async def on_button_click(interaction):
-    contents = interaction.custom_id.split('.')
-
-    ctx = interaction.message
-
-    if interaction.custom_id.startswith("help"):
-
-        if int(contents[3]) != interaction.user.id:
-            print(f'contents[3]: {contents[3]}')
-            print(f"interaction.user.id: {interaction.user.id}")
-            print('Retornou')
-            return
-
-        pages = [secao1(ctx), secao2(ctx), secao3(ctx), secao4(ctx), secao5(ctx)]
-
-        if contents[1] == 'pass_left' and int(contents[2]) > 0:
-            print("pá tras")
-            print(f'contents[2]: {contents[2]}')
-            page = int(contents[2]) - 1
-        elif contents[1] == 'pass_right' and int(contents[2]) < len(pages):
-            print('pá frente')
-            print(f'contents[2]: {contents[2]}')
-            page = int(contents[2]) + 1
-            print(f'page: {page}')
-        else:
-            print('pá rado')
-            print(f'contents[2]: {contents[2]}')
-            print(f"len(pages): {len(pages)}")
-            page = int(contents[2])
-            print(f'page: {page}')
-
-        buttons = [
-            Button(style=ButtonStyle.PRIMARY, emoji="◀️", custom_id=f'help.pass_left.{page}.{interaction.user.id}'),
-            Button(style=ButtonStyle.PRIMARY, emoji="▶️", custom_id=f'help.pass_right.{page}.{interaction.user.id}')
-        ]
-        await ctx.edit(embed=pages[page], components=[buttons])
-
-    elif interaction.custom_id.startswith("server_info"):
-        contents = interaction.custom_id.split('.')
-        ctx = interaction.message
-        if contents[1] == 'raphakawai':
-            await ctx.reply('RAPHAEL KAWAAAIIIIIIIIIIII')
-        if contents[1] == 'bolo':
-            await ctx.reply('BOOOOOLOOOO :cake: :cake::cake: :cake: :birthday: :birthday: :birthday: ')
-        if contents[1] == 'festim':
-            await ctx.reply('É FEXXXTAAAA :tada: :partying_face: :tada: :partying_face: :tada: :partying_face:')
-    else:
-        return
 
 
 @client.event

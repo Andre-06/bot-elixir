@@ -1,0 +1,25 @@
+name: my-workflow
+
+on:
+    workflow_dispatch:
+
+env:
+    bot_token: ${{ secrets.BOT_SECRET_KEY }}
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: action/checkout@v4
+
+      - name: Setup Python
+        uses: action/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Run Python
+        run: |
+          pip install -r requirements.txt
+          python main.py
+

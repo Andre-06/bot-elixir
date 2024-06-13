@@ -53,7 +53,12 @@ async def on_message(message):
             chr.isdigit() for chr in message.content):
         try:
             print('*************** ' + str(message.channel) + ' *****************')
-            print('*************** ' + str(message.guild.name) + ' *****************')
+
+            try:
+                print('*************** ' + str(message.guild.name) + ' *****************')
+            except:
+                pass
+
             dado = rolagem_tag(message.content.lower())[0]
         except ValueError:
             return

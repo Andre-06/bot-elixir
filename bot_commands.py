@@ -1,4 +1,6 @@
 # -------------BIBLIOTECAS---------#
+import discord
+
 from functions import *
 from start import client
 
@@ -55,7 +57,7 @@ async def icon_user(ctx, user: discord.Member):
 
 @client.command(aliases=['iconServer'])
 async def icon_server(ctx):
-    await ctx.send(ctx.guild.icon_url)
+    await ctx.send(ctx.guild.icon)
 
 
 @client.command(aliases=['ini'])
@@ -771,6 +773,11 @@ async def sorte(ctx):
 @client.command()
 async def calc(ctx, *, conta):
     await ctx.send(f'{conta} = `{eval(conta)}`')
+
+
+@client.command()
+async def reliquias(ctx):
+    await ctx.send("ELE DISSE RELIQUIAS??????????????????")
 
 
 @client.command()
